@@ -10,32 +10,31 @@ client = lirc.Client()
 @app.route("/", methods=['POST', 'GET'])
 def hello_world():
     form = VoteForm()
+    print(request)
     if request.method == 'POST':
-        print(request.form)
-        response = request.form['vote']
-        if response == 'on':
+        if request.form.get('on'):
             client.send_once("christmas", "KEY_POWER")
-        elif response == 'off':
+        elif request.form.get('off'):
             client.send_once("christmas", "KEY_POWER2")
-        elif response == 'brighter':
+        elif request.form.get('brighter'):
             client.send_once("christmas", "KEY_BRIGHTNESSUP")
-        elif response == 'dimmer':
+        elif request.form.get('dimmer'):
             client.send_once("christmas", "KEY_BRIGHTNESSDOWN")
-        elif response == 'rotate':
+        elif request.form.get('rotate'):
             client.send_once("christmas", "KEY_NUMERIC_1")
-        elif response == 'twinkle':
+        elif request.form.get('twinkle'):
             client.send_once("christmas", "KEY_NUMERIC_2")
-        elif response == 'flashing_changes':
+        elif request.form.get('flashing_changes'):
             client.send_once("christmas", "KEY_NUMERIC_3")
-        elif response == 'chill_mode':
+        elif request.form.get('chill_mode'):
             client.send_once("christmas", "KEY_NUMERIC_4")
-        elif response == 'dancing':
+        elif request.form.get('dancing'):
             client.send_once("christmas", "KEY_NUMERIC_5")
-        elif response == 'slow_fade':
+        elif request.form.get('slow_fade'):
             client.send_once("christmas", "KEY_NUMERIC_6")
-        elif response == 'party_mode':
+        elif request.form.get('party_mode'):
             client.send_once("christmas", "KEY_NUMERIC_7")
-        elif response == 'solid':
+        elif request.form.get('solid'):
             client.send_once("christmas", "KEY_NUMERIC_8")
 
     return render_template('christmas_vote.html', form=form)
