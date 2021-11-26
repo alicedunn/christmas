@@ -13,28 +13,40 @@ def hello_world():
     print(request)
     if request.method == 'POST':
         if request.form.get('on'):
-            client.send_once("christmas", "KEY_POWER")
+            # client.send_once("christmas", "KEY_POWER")
+            print('')
         elif request.form.get('off'):
-            client.send_once("christmas", "KEY_POWER2")
+            print('')
+            # client.send_once("christmas", "KEY_POWER2")
         elif request.form.get('brighter'):
-            client.send_once("christmas", "KEY_BRIGHTNESSUP")
+            print('')
+            # client.send_once("christmas", "KEY_BRIGHTNESSUP")
         elif request.form.get('dimmer'):
-            client.send_once("christmas", "KEY_BRIGHTNESSDOWN")
+            print('')
+            # client.send_once("christmas", "KEY_BRIGHTNESSDOWN")
         elif request.form.get('rotate'):
-            client.send_once("christmas", "KEY_NUMERIC_1")
+            print('')
+            # client.send_once("christmas", "KEY_NUMERIC_1")
         elif request.form.get('twinkle'):
-            client.send_once("christmas", "KEY_NUMERIC_2")
+            print('')
+            # client.send_once("christmas", "KEY_NUMERIC_2")
         elif request.form.get('flashing_changes'):
-            client.send_once("christmas", "KEY_NUMERIC_3")
+            print('')
+            # client.send_once("christmas", "KEY_NUMERIC_3")
         elif request.form.get('chill_mode'):
-            client.send_once("christmas", "KEY_NUMERIC_4")
+            print('')
+            # client.send_once("christmas", "KEY_NUMERIC_4")
         elif request.form.get('dancing'):
-            client.send_once("christmas", "KEY_NUMERIC_5")
+            print('')
+            # client.send_once("christmas", "KEY_NUMERIC_5")
         elif request.form.get('slow_fade'):
-            client.send_once("christmas", "KEY_NUMERIC_6")
+            print('')
+            # client.send_once("christmas", "KEY_NUMERIC_6")
         elif request.form.get('party_mode'):
-            client.send_once("christmas", "KEY_NUMERIC_7")
+            print('')
+            # client.send_once("christmas", "KEY_NUMERIC_7")
         elif request.form.get('solid'):
-            client.send_once("christmas", "KEY_NUMERIC_8")
+            print('')
+            # client.send_once("christmas", "KEY_NUMERIC_8")
 
     return render_template('christmas_vote.html', form=form)
